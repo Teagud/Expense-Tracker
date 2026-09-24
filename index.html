@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#1c1c1e">
@@ -15,18 +15,18 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',system-ui,sans-serif;
   background:#0a0a0c;
   color:#f2f2f7;
-  font-size:20px;
+  font-size:18px;
   -webkit-text-size-adjust:100%;
   text-size-adjust:100%;
 }
 :root{
-  --fs-xs:15px; --fs-sm:17px; --fs-base:20px; --fs-md:22px;
-  --fs-lg:26px; --fs-xl:30px; --fs-2xl:34px;
-  --fs-icon:30px; --fs-icon-nav:32px; --fs-icon-fab:36px; --fs-icon-cat:28px;
-  --sp-xs:6px; --sp-sm:14px; --sp-md:18px; --sp-lg:24px; --sp-xl:30px; --sp-page:20px;
-  --h-topbar:72px; --h-navbar:80px; --sz-fab:68px;
-  --sz-cat-icon:56px; --sz-cat-icon-sm:44px;
-  --r-sm:14px; --r-md:18px; --r-lg:20px; --r-xl:26px; --touch:56px;
+  --fs-xs:14px; --fs-sm:16px; --fs-base:18px; --fs-md:20px;
+  --fs-lg:24px; --fs-xl:28px; --fs-2xl:32px;
+  --fs-icon:28px; --fs-icon-nav:30px; --fs-icon-fab:34px; --fs-icon-cat:26px;
+  --sp-xs:6px; --sp-sm:12px; --sp-md:16px; --sp-lg:22px; --sp-xl:28px; --sp-page:18px;
+  --h-topbar:68px; --h-navbar:76px; --sz-fab:64px;
+  --sz-cat-icon:52px; --sz-cat-icon-sm:40px;
+  --r-sm:12px; --r-md:16px; --r-lg:18px; --r-xl:24px; --touch:52px;
   --clr-bg:#0a0a0c; --clr-surface:#1c1c1e; --clr-surface2:#2c2c2e;
   --clr-border:rgba(255,255,255,0.10); --clr-text:#f2f2f7; --clr-text2:#aeaeb2; --clr-text3:#545458;
   --clr-accent:#7c55d4; --clr-accent-lt:#9b72f0; --clr-accent-bg:#2d1f4e; --clr-accent-fg:#c4a7ff;
@@ -38,14 +38,6 @@ body{
     --fs-icon:26px; --fs-icon-nav:28px; --fs-icon-fab:32px; --fs-icon-cat:24px;
     --sp-page:32px; --sp-md:20px; --sp-lg:26px;
     --h-topbar:66px; --h-navbar:74px; --sz-fab:62px; --sz-cat-icon:50px; --sz-cat-icon-sm:38px; --touch:44px;
-  }
-}
-/* Extra safety for very small phones (≤360px) */
-@media(max-width:360px){
-  :root{
-    --fs-xs:14px; --fs-sm:16px; --fs-base:18px; --fs-md:20px;
-    --fs-lg:24px; --fs-xl:28px;
-    --sp-page:16px; --sp-md:14px;
   }
 }
 #app{width:100%;min-height:100dvh;background:var(--clr-bg);}
@@ -204,24 +196,6 @@ body{
 .col-ref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;}
 .col-ref-item{font-size:var(--fs-sm);color:var(--clr-text2);}
 .col-ref-item span{color:var(--clr-text);font-weight:600;}
-/* Instalment styles */
-.instalment-toggle{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--clr-surface2);border-radius:var(--r-sm);cursor:pointer;user-select:none;margin-bottom:var(--sp-sm);}
-.instalment-toggle-label{font-size:var(--fs-base);font-weight:600;color:var(--clr-text);display:flex;align-items:center;gap:10px;}
-.toggle-switch{width:50px;height:28px;border-radius:99px;background:var(--clr-text3);position:relative;transition:background .2s;flex-shrink:0;}
-.toggle-switch.on{background:var(--clr-accent);}
-.toggle-knob{width:22px;height:22px;border-radius:50%;background:#fff;position:absolute;top:3px;left:3px;transition:left .2s;}
-.toggle-switch.on .toggle-knob{left:25px;}
-.instalment-config{background:var(--clr-surface2);border-radius:var(--r-sm);padding:var(--sp-md);margin-bottom:var(--sp-sm);}
-.instalment-preview{display:flex;gap:var(--sp-sm);overflow-x:auto;padding-bottom:6px;margin-top:var(--sp-sm);scrollbar-width:none;}
-.instalment-preview::-webkit-scrollbar{display:none;}
-.inst-chip{background:var(--clr-accent-bg);border:1px solid var(--clr-accent);border-radius:var(--r-sm);padding:8px 12px;flex-shrink:0;text-align:center;}
-.inst-chip-month{font-size:var(--fs-xs);color:var(--clr-accent-fg);font-weight:600;}
-.inst-chip-amt{font-size:var(--fs-sm);color:var(--clr-text);font-weight:700;margin-top:2px;}
-.inst-badge{display:inline-flex;align-items:center;gap:4px;font-size:var(--fs-xs);padding:2px 8px;border-radius:99px;background:var(--clr-accent-bg);color:var(--clr-accent-fg);margin-left:6px;vertical-align:middle;font-weight:600;}
-.times-row{display:flex;align-items:center;gap:var(--sp-sm);}
-.times-btn{width:var(--touch);height:var(--touch);border-radius:var(--r-sm);border:1px solid var(--clr-border);background:var(--clr-surface);color:var(--clr-text);font-size:var(--fs-lg);font-family:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.times-btn:active{background:var(--clr-accent-bg);}
-.times-val{font-size:var(--fs-xl);font-weight:700;color:var(--clr-accent-lt);min-width:48px;text-align:center;}
 </style>
 </head>
 <body>
@@ -360,26 +334,6 @@ body{
           <div><label class="field-lbl"><i class="ti ti-calendar-plus" style="margin-right:5px;vertical-align:middle"></i>Entry Date</label><input type="date" id="inp-entry-date" class="inp"></div>
         </div>
       </div>
-      <!-- Instalment split -->
-      <div class="field">
-        <div class="instalment-toggle" onclick="toggleInstalment()">
-          <div class="instalment-toggle-label">
-            <i class="ti ti-credit-card" style="font-size:var(--fs-icon);color:var(--clr-accent-lt)"></i>
-            Split into instalments
-          </div>
-          <div class="toggle-switch" id="inst-switch"><div class="toggle-knob"></div></div>
-        </div>
-        <div class="instalment-config" id="inst-config" style="display:none">
-          <label class="field-lbl" style="margin-bottom:var(--sp-sm)">Number of instalments</label>
-          <div class="times-row">
-            <button class="times-btn" onclick="changeInst(-1)"><i class="ti ti-minus"></i></button>
-            <div class="times-val" id="inst-val">2x</div>
-            <button class="times-btn" onclick="changeInst(1)"><i class="ti ti-plus"></i></button>
-          </div>
-          <div style="margin-top:var(--sp-md);font-size:var(--fs-sm);color:var(--clr-text2);font-weight:600;margin-bottom:var(--sp-sm)">Preview</div>
-          <div class="instalment-preview" id="inst-preview"></div>
-        </div>
-      </div>
       <button class="save-btn" onclick="saveExp()">Save Expense</button>
     </div>
   </div>
@@ -422,7 +376,6 @@ const SUBCATS={
 const CAT_LABEL_MAP={};CATS.forEach(c=>{CAT_LABEL_MAP[c.label.toLowerCase()]=c.id;});
 
 let expenses=[],selCat=null,selSub=null,activeScreen='home';
-let instActive=false,instTimes=2;
 let anaMon=null,cmpCat='transport',cmpMonths=new Set(),dataFilter='all',selIds=new Set();
 let pieChart=null,barChart=null,lineChart=null,lastScrollY=0,fabHidden=false;
 let expandedCats=new Set(),activeDateTab='acc',expandedDays=new Set(),pendingImport=[];
@@ -467,9 +420,6 @@ function openModal(){
   document.getElementById('inp-desc').value='';
   document.getElementById('inp-date').value=tod();
   document.getElementById('inp-entry-date').value=tod();
-  instActive=false;instTimes=2;
-  document.getElementById('inst-switch').classList.remove('on');
-  document.getElementById('inst-config').style.display='none';
   renderCatGrid();document.getElementById('sub-field').style.display='none';
   document.getElementById('add-modal').classList.add('open');
 }
@@ -482,36 +432,6 @@ function pickCat(id){
   else sf.style.display='none';
 }
 function pickSub(s){selSub=s;document.querySelectorAll('#sub-chips .pill').forEach(b=>b.classList.toggle('sel',b.textContent===s));}
-function toggleInstalment(){
-  instActive=!instActive;
-  document.getElementById('inst-switch').classList.toggle('on',instActive);
-  document.getElementById('inst-config').style.display=instActive?'block':'none';
-  if(instActive)renderInstPreview();
-}
-function changeInst(delta){
-  instTimes=Math.min(60,Math.max(2,instTimes+delta));
-  document.getElementById('inst-val').textContent=instTimes+'x';
-  renderInstPreview();
-}
-function renderInstPreview(){
-  const amt=parseFloat(document.getElementById('inp-amt').value)||0;
-  const date=document.getElementById('inp-date').value||tod();
-  const each=amt/instTimes;
-  const [y,m]=date.split('-').map(Number);
-  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  let html='';
-  for(let i=0;i<instTimes;i++){
-    const md=new Date(y,m-1+i,1);
-    const lbl=months[md.getMonth()]+' '+md.getFullYear();
-    html+=`<div class="inst-chip"><div class="inst-chip-month">${i+1}/${instTimes} · ${lbl}</div><div class="inst-chip-amt">${fmt(each)}</div></div>`;
-  }
-  document.getElementById('inst-preview').innerHTML=html;
-}
-// Refresh preview when amount or date changes
-document.addEventListener('input',function(e){
-  if((e.target.id==='inp-amt'||e.target.id==='inp-date')&&instActive)renderInstPreview();
-});
-
 function saveExp(){
   const amt=parseFloat(document.getElementById('inp-amt').value);
   const desc=document.getElementById('inp-desc').value.trim();
@@ -519,34 +439,7 @@ function saveExp(){
   const entryDate=document.getElementById('inp-entry-date').value;
   if(!amt||amt<=0){document.getElementById('inp-amt').focus();return;}
   if(!selCat||!date)return;
-  if(instActive&&instTimes>=2){
-    const each=Math.round((amt/instTimes)*100)/100;
-    const groupId='grp'+Date.now();
-    const [y,m]=date.split('-').map(Number);
-    for(let i=0;i<instTimes;i++){
-      const md=new Date(y,m-1+i,1);
-      const dd=String(md.getDate()).padStart(2,'0');
-      const mm=String(md.getMonth()+1).padStart(2,'0');
-      const yy=md.getFullYear();
-      const instDate=`${yy}-${mm}-${dd}`;
-      // Keep the same day-of-month as original if valid
-      const origDay=parseInt(date.split('-')[2]);
-      const lastDay=new Date(yy,md.getMonth()+1,0).getDate();
-      const useDay=Math.min(origDay,lastDay);
-      const finalDate=`${yy}-${mm}-${String(useDay).padStart(2,'0')}`;
-      expenses.push({
-        id:Date.now()+i,
-        amt:each,
-        desc:(desc||catById(selCat).label)+` (${i+1}/${instTimes})`,
-        cat:selCat,sub:selSub,
-        date:finalDate,
-        entryDate:entryDate||date,
-        instalment:{index:i+1,total:instTimes,groupId,originalAmt:amt}
-      });
-    }
-  }else{
-    expenses.push({id:Date.now(),amt,desc:desc||catById(selCat).label,cat:selCat,sub:selSub,date,entryDate:entryDate||date});
-  }
+  expenses.push({id:Date.now(),amt,desc:desc||catById(selCat).label,cat:selCat,sub:selSub,date,entryDate:entryDate||date});
   expenses.sort((a,b)=>b.date.localeCompare(a.date));
   ts();closeModal();if(activeScreen==='home')renderHome();updBadge();
 }
